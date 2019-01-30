@@ -1,13 +1,28 @@
 <!DOCTYPE html>
+
 <html>
+<head>
+    <style>
+        body {
+             font-size: 150%;
+         }
+         button {
+             font-size: 100%;
+         }
+        </style>
+</head>
+
  <body>
 
 
   <h1> Feedback System </h1>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <p> Please provide your feedback below. 1 means extremely dissatisfied,
+       5 means extremely satisfied. <br>
 
   <form action="submit.php" method="post">
-  <p> Are you satisfied with our products? 1 means extremely dissatisfied, 5 means extremely satisfied. <br>
-	<label><input type="radio" name="arg1" value="1" required> 1</label>
+  <p> Are you satisfied with our products?<br>
+      <label><input type="radio" name="arg1" value="1" required> 1</label>
     <label><input type="radio" name="arg1" value="2" required> 2</label>
 	<label><input type="radio" name="arg1" value="3" required> 3</label>
     <label><input type="radio" name="arg1" value="4" required> 4</label>
@@ -36,43 +51,12 @@
 
 	<br>
     <p>Any other feedback<br>
-    <textarea name="feed" type="text" rows = "5" cols="50"></textarea>
+    <textarea name="feed" type="text" rows = "5" cols="50" maxlength="500"></textarea>
 
 
 	<br>
     <button type="submit" name="submit" value="submit">Submit Feedback</button>
   </form>
-
-  <?php
-  /*if (isset($_POST['submit']))
-  {
-    echo "conn.php running now!\n";
-    $serverName = "localhost";
-    $userName = "phpmyadmin";
-    $password = "qwerty";
-    $databaseName = "feedback";
-    $connect = mysqli_connect($serverName, $userName, $password, $databaseName);
-
-    if (mysqli_connect_errno())
-    {
-      echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    }
-
-    $response1 = $_POST['arg1'];
-    $response2 = $_POST['arg2'];
-    $response3 = $_POST['arg3'];
-    $response4 = $_POST['arg4'];
-    $feedback_text = $_POST['feed'];
-
-    $sql = "INSERT INTO responses (response1, response2, response3, response4,
-    feedback_text) VALUES ( '$response1', '$response2', '$response3', '$response4', '$feedback_text');";
-  //    $sql = "INSERT INTO responses ( response1, response2, response3, response4,
-  //      feedback_text) VALUES ( '7', '6', '5', '4', 'wefewfewfw');";
-    mysqli_query($connect, $sql);
-
-  }
-*/
-  ?>
 
   </body>
 </html>
